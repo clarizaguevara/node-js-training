@@ -9,14 +9,15 @@ exports.squareNum = (arr) => {
 }
 
 exports.createMaskOnPhoneNumber = (phoneNumber) => {
-    var numbersToHide = phoneNumber.substring(3, phoneNumber.length-3)
+    var phoneNumberStr = phoneNumber.toString()
+    var numbersToHide = phoneNumberStr.substring(3, phoneNumberStr.length-3)
     var maskString = ""
 
     for (let i=0; i<numbersToHide.length; i++) {
         maskString += "*"
     }
 
-    return phoneNumber.replace(numbersToHide, maskString)
+    return phoneNumberStr.replace(numbersToHide, maskString)
 }
 
 exports.getHighestSalaryEmp = (empArr, fieldName) => {

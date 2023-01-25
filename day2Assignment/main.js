@@ -6,7 +6,7 @@ var arr = [10,20,30,40,50]
 console.log(squareNum(arr))
 
 var phoneNum = 1234567890
-console.log(createMaskOnPhoneNumber(phoneNum.toString()))
+console.log(createMaskOnPhoneNumber(phoneNum))
 
 var empArr = [
     {empId:101,empName:"Asha",salary:1001,deptId:"D1"},
