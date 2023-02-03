@@ -21,10 +21,12 @@ async function run() {
             .then((res) => {
                 console.log("Inserted Ids: ", res.insertedIds)
                 console.log("Inserted Count: ", res.insertedCount)
+                mongoClient.close()
             })
             .catch((err) => {
                 console.log("Number or emp inserted: ", err.result.insertedCount)
                 console.log("Error on insertMany: ", err.writeErrors[0])
+                mongoClient.close()
             })
     }
     catch (err) {
