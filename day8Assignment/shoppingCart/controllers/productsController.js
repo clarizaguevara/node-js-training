@@ -21,7 +21,7 @@ exports.getProducts = () => {
 }
 
 exports.addProduct = (productObj) => {
-    if (!productObj.length === 0 || productObj.length === undefined) {
+    if (!productObj.productId) {
         return false
     } else {
         var pos = checkProduct(productObj.productId)
