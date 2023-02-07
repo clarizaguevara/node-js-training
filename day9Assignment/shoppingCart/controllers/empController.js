@@ -23,7 +23,7 @@ exports.getAll = async (request, response, next) => {
     }
     catch (err) {
         mongoClient.close()
-        response.status(202).send({err: `${err}`})
+        response.status(500).send({err: `${err}`})
     }
 }
 
@@ -51,12 +51,12 @@ exports.getEmployee = async (request, response, next) => {
             })
             .catch(err => {
                 mongoClient.close()
-                response.status(202).send({err: `${err}`})
+                response.status(500).send({err: `${err}`})
             })
     }
     catch (err) {
         mongoClient.close()
-        response.status(202).send({err: `${err}`})
+        response.status(500).send({err: `${err}`})
     }
 }
 
@@ -73,12 +73,12 @@ exports.addEmployee = async (request, response, next) => {
             })
             .catch(err => {
                 mongoClient.close()
-                response.status(202).send({err: `${err}`})
+                response.status(500).send({err: `${err}`})
             })
     }
     catch (err) {
         mongoClient.close()
-        response.status(202).send({err: `${err}`})
+        response.status(500).send({err: `${err}`})
     }
 }
 
@@ -110,12 +110,12 @@ exports.updateEmployee = async (request, response, next) => {
             })
             .catch(err => {
                 mongoClient.close()
-                response.status(202).send({err: `${err}`})
+                response.status(500).send({err: `${err}`})
             })
     }
     catch (err) {
         mongoClient.close()
-        response.status(202).send({err: `${err}`})
+        response.status(500).send({err: `${err}`})
     }
 }
 
@@ -142,12 +142,12 @@ exports.deleteEmployee = async (request, response, next) => {
             })
             .catch(err => {
                 mongoClient.close()
-                response.status(202).send({err: `${err}`})
+                response.status(500).send({err: `${err}`})
             })
     }
     catch (err) {
         mongoClient.close()
-        response.status(202).send({err: `${err}`})
+        response.status(500).send({err: `${err}`})
     }
 }
 
