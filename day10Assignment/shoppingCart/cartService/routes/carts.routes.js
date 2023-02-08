@@ -25,26 +25,22 @@ router.post("/", (req, res) => {
 
 router.post("/confirm", async (req, res) => {
     var finalisedItems = req.body
-    await cartController.updateItems(finalisedItems, "confirm")
-    res.status(200).send({msg: "Data updated successfully"})
-    /* .then((data)=>{
+    if (finalisedItems && finalisedItems.length) {
+        await cartController.updateItems(finalisedItems, "confirm")
         res.status(200).send({msg: "Data updated successfully"})
-    })
-    .catch(err=>{
-        res.status(500).send({err: "Error at server side"})
-    }) */
+    } else {
+        res.status(202).send({msg: "Cart is empty"})
+    }
 })
 
 router.post("/cancel", async (req, res) => {
     var finalisedItems = req.body
-    await cartController.updateItems(finalisedItems, "cancel")
-    res.status(200).send({msg: "Data updated successfully"})
-    /* .then((data)=>{
+    if (finalisedItems && finalisedItems.length) {
+        await cartController.updateItems(finalisedItems, "cancel")
         res.status(200).send({msg: "Data updated successfully"})
-    })
-    .catch(err=>{
-        res.status(500).send({err: "Error at server side"})
-    }) */
+    } else {
+        res.status(202).send({msg: "Cart is empty"})
+    }
 })
 
 router.delete("/", async (req, res) => {
